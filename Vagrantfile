@@ -5,7 +5,6 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.cpus = 2
     vb.memory = 2048
-    #vb.customize ["modifyvm", :id, "--vram", "64"]
   end
 
   config.vm.provision "shell" do |s|
@@ -30,7 +29,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell" do |s|
     s.name = "Copy .xinitrc to ~"
-	s.privileged = false
+    s.privileged = false
     s.inline = "cp -avf /vagrant/.xinitrc /home/vagrant/.xinitrc"
   end
 
